@@ -1,7 +1,7 @@
 package ecc25519
 
 import (
-	"crypto/curve25519"
+	"curve25519"
 	"crypto/sha512"
 	"crypto/rand"
 	"errors"

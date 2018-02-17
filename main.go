@@ -1,17 +1,13 @@
-package ecc25519
+package main
 
 import(
 	"github.com/golang/go/src/pkg/encoding/hex"
 	"strings"
 	"fmt"
-	"testing"
+	"ecc25519"
 )
 
-var curve Curve;
-var src string = "You can always define a function in Go to do what you want, than assign the function to console.log in javascript.";
-var srcdata []byte;
-
-func Test_All(t *testing.T)  {
+func main() {
 	CreateKey();
 	DataSign()
 	DataCrypt();
@@ -20,6 +16,12 @@ func Test_All(t *testing.T)  {
 	DataSign()
 	DataCrypt();
 }
+
+
+var curve ecc25519.Curve;
+var src string = "You can always define a function in Go to do what you want, than assign the function to console.log in javascript.";
+var srcdata []byte;
+
 func CreateKey()  {
 	fmt.Println("create a new pair key")
 	curve.MakeKey();
