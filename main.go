@@ -1,7 +1,7 @@
 package main
 
 import(
-	"github.com/golang/go/src/pkg/encoding/hex"
+	"hex"
 	"strings"
 	"fmt"
 	"ecc25519"

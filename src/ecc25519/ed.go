@@ -1,8 +1,8 @@
 package ecc25519
 
 import (
-	"github.com/agl/ed25519"
-	"github.com/golang/go/src/pkg/encoding/hex"
+	"ed25519"
+	"hex"
 	"crypto/rand"
 	"errors"
 	"strings"

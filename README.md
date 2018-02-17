@@ -1,28 +1,26 @@
 # ecc25519
 combine golang ed25519 and curve25519 libray in one 
 
-ed25519 folder is from [https://github.com/agl/ed25519](https://github.com/agl/ed25519)
+ed25519 is from [https://github.com/agl/ed25519](https://github.com/agl/ed25519)
 
-curve25519 folder is from [https://github.com/golang/crypto/curve25519](https://github.com/golang/crypto/curve25519)
+curve25519 is from [https://github.com/golang/crypto/curve25519](https://github.com/golang/crypto/curve25519)
 
 
 This Libray implement ed25519 and curve25519 in same private key and public key
 
+为了方便, 把 HEX 和一些公用包提取到当前项目里了，因为那些包可能不一定默认安装，而安装它们可能需要很长时间
+
 ```
-package ecc25519
+package main
 
 import(
-	"github.com/golang/go/src/pkg/encoding/hex"
+	"hex"
 	"strings"
 	"fmt"
-	"testing"
+	"ecc25519"
 )
 
-var curve Curve;
-var src string = "You can always define a function in Go to do what you want, than assign the function to console.log in javascript.";
-var srcdata []byte;
-
-func Test_All(t *testing.T)  {
+func main() {
 	CreateKey();
 	DataSign()
 	DataCrypt();
@@ -31,6 +29,12 @@ func Test_All(t *testing.T)  {
 	DataSign()
 	DataCrypt();
 }
+
+
+var curve ecc25519.Curve;
+var src string = "You can always define a function in Go to do what you want, than assign the function to console.log in javascript.";
+var srcdata []byte;
+
 func CreateKey()  {
 	fmt.Println("create a new pair key")
 	curve.MakeKey();
