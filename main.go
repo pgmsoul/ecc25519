@@ -25,9 +25,9 @@ var srcdata []byte;
 func CreateKey()  {
 	fmt.Println("create a new pair key")
 	curve.MakeKey();
-	fmt.Println("private key(32 bytes):",curve.GetPrivateString());
-	curve.GetPublicString();
-	fmt.Println("public key(32 bytes):",curve.GetPublicString());
+	fmt.Println("private key(32 bytes):",curve.GetPrivateHex());
+	curve.GetPublicHex();
+	fmt.Println("public key(32 bytes):",curve.GetPublicHex());
 }
 func SetExistKey()  {
 	//set a exist key for curve
